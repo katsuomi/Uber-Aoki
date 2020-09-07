@@ -1,7 +1,7 @@
 import React, { FC, FormEvent, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { submitTaxiRequest } from './utils/slack';
+import { submitTaxiRequest } from '../utils/slack';
 
 const Home: FC = () => {
   const [name, setName] = useState<string>("");
