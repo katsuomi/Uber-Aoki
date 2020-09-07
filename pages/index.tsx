@@ -47,15 +47,18 @@ const Home: FC = () => {
         <section>
           <h5>青木の気分次第で、あなたを送迎するかもしれません。</h5>
           <ul>
-            <li>名古屋市内に限ります</li>
+            <li>名古屋市内だとありがたいです。</li>
             <li>送迎可能な場合、送迎時間の20分前までに連絡が来ます</li>
             <li>送迎時間の20分前までに連絡が来ない場合、残念。迎えに来ません。</li>
+            <li>明日の○時にお願いします、とかダメです、</li>
           </ul>
         </section>
         <section>
           <form className={styles.form}>
             <span>迎えに来て欲しい場所(住所)<span className={styles.requiredBadge}>必須</span></span>
             <input required className={styles.input} value={place} onChange={e => setPlace(e.target.value)} />
+            <span>迎えに来て欲しい日にち(今日以外選べません)</span>
+            <input className={styles.input} defaultValue='今日' />
             <span>迎えに来て欲しい時間<span className={styles.requiredBadge}>必須</span></span>
             <input required className={styles.input} value={arrivalTime} onChange={e => setArrivalTime(e.target.value)} />
             <span>名前<span className={styles.requiredBadge}>必須</span></span>
@@ -68,6 +71,9 @@ const Home: FC = () => {
           </form>
         </section>
       </main>
+      <footer className={styles.footer}>
+        Uber Aokiしか勝たん
+      </footer>
     </div>
   );
 };
