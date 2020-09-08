@@ -2,21 +2,24 @@ import React, { FC, FormEvent, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { submitTaxiRequest } from '../utils/slack';
+import { dataToSlack } from '../types/slack';
 
 const Home: FC = () => {
   const [name, setName] = useState<string>("");
   const [arrivalTime, setArrivalTime] = useState<string>("");
-  const [place, setPlace] = useState<string>("");
+  const [arrivalPlace, setArrivalPlace] = useState<string>("");
+  const [destination, setDestination] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [thought, setThought] = useState<string>("");
-  const isDisabled = name && arrivalTime && place && phoneNumber && thought ? false : true;
+  const isDisabled = name && arrivalTime && arrivalPlace && destination && phoneNumber && thought ? false : true;
 
   const handleOnSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const data: any = {
+    const data: dataToSlack = {
       name: name,
       arrivalTime: arrivalTime,
-      place: place,
+      arrivalPlace: arrivalPlace,
+      destination: destination,
       phoneNumber: phoneNumber,
       thought: thought,
     };
@@ -25,7 +28,8 @@ const Home: FC = () => {
       alert('依頼を送りました');
       setName("");
       setArrivalTime("");
-      setPlace("");
+      setArrivalPlace("");
+      setDestination("");
       setPhoneNumber("");
       setThought("");
     } else {
@@ -56,9 +60,11 @@ const Home: FC = () => {
         <section>
           <form className={styles.form}>
             <span>迎えに来て欲しい場所(住所)<span className={styles.requiredBadge}>必須</span></span>
-            <input required className={styles.input} value={place} onChange={e => setPlace(e.target.value)} />
+            <input required className={styles.input} value={arrivalPlace} onChange={e => setArrivalPlace(e.target.value)} />
+            <span>行き先(住所)<span className={styles.requiredBadge}>必須</span></span>
+            <input required className={styles.input} value={destination} onChange={e => setDestination(e.target.value)} />
             <span>迎えに来て欲しい日にち(今日以外選べません)</span>
-            <input className={styles.input} defaultValue='今日' />
+            <span className={styles.input} >今日</span>
             <span>迎えに来て欲しい時間<span className={styles.requiredBadge}>必須</span></span>
             <input required className={styles.input} value={arrivalTime} onChange={e => setArrivalTime(e.target.value)} />
             <span>名前<span className={styles.requiredBadge}>必須</span></span>

@@ -1,4 +1,6 @@
-export const submitTaxiRequest = (data: any) => {
+import { dataToSlack } from "../types/slack";
+
+export const submitTaxiRequest = (data: dataToSlack) => {
   try {
     const url = process.env.NEXT_PUBLIC_SLACK_WEBHOOK_URL;
     const content = {
@@ -22,7 +24,14 @@ export const submitTaxiRequest = (data: any) => {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `場所: ${data.place}`
+            text: `迎えに来て欲しい場所: ${data.arrivalPlace}`
+          }
+        },
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: `目的地: ${data.destination}`
           }
         },
         {
