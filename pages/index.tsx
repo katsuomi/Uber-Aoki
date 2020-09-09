@@ -42,6 +42,22 @@ const Home: FC = () => {
       <Head>
         <title>Uber Aoki</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Uber Aoki 青木の気分次第で、あなたを送迎するかもしれません"
+        />
+        <meta property="og:url" content="Uber Aoki" />
+        <meta property="og:title" content="Uber Aoki" />
+        <meta property="og:description" content="Uber Aoki 青木の気分次第で、あなたを送迎するかもしれません" />
+        <meta property="og:image" content="https://user-images.githubusercontent.com/36298285/92570625-17c8d580-f2bd-11ea-8b75-63134356d372.png" />
+        <meta property="og:type" content=" website" />
+        <meta property="og:site_name" content="Uber Aoki" />
+        <meta property="og:locale" content="ja_JP" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="https://user-images.githubusercontent.com/36298285/92570625-17c8d580-f2bd-11ea-8b75-63134356d372.png" />
+        <meta name="twitter:site" content="Uber Aoki" />
       </Head>
 
       <main className={styles.main}>
