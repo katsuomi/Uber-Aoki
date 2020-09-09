@@ -46,11 +46,11 @@ const Home: FC = () => {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Uber Aoki 青木の気分次第で、あなたを送迎するかもしれません"
+          content="青木の気分次第で、あなたを送迎するかもしれません"
         />
         <meta property="og:url" content="Uber Aoki" />
         <meta property="og:title" content="Uber Aoki" />
-        <meta property="og:description" content="Uber Aoki 青木の気分次第で、あなたを送迎するかもしれません" />
+        <meta property="og:description" content="青木の気分次第で、あなたを送迎するかもしれません" />
         <meta property="og:image" content="https://user-images.githubusercontent.com/36298285/92570625-17c8d580-f2bd-11ea-8b75-63134356d372.png" />
         <meta property="og:type" content=" website" />
         <meta property="og:site_name" content="Uber Aoki" />
